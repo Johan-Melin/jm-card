@@ -23,7 +23,7 @@ export default function Home() {
       
       <div className="absolute top-8 flex items-center gap-4">
         <button 
-          className={`${transparentWrap} cursor-pointer`}
+          className={`${transparentWrap} cursor-pointer hover:bg-white/20`}
           onClick={prevTheme}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,8 +36,8 @@ export default function Home() {
         </div>
 
         <button 
-          className={`${transparentWrap} cursor-pointer`}
-          onClick={prevTheme}
+          className={`${transparentWrap} cursor-pointer hover:bg-white/20`}
+          onClick={nextTheme}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
