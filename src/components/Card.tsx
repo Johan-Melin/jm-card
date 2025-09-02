@@ -12,6 +12,8 @@ const Card: React.FC<CardProps> = ({ theme }) => {
     setIsFlipped(!isFlipped)
   }
 
+  const transparentWrap = "bg-white/10 backdrop-blur-sm rounded-full p-2 border border-white/20"
+
   return (
     <div className="relative w-96 h-64"
       style={{
@@ -26,6 +28,14 @@ const Card: React.FC<CardProps> = ({ theme }) => {
       <div className="absolute top-6 left-6 [backface-visibility:hidden]">
         <h3 className="text-white text-xl font-bold mb-1">Johan Melin</h3>
         <p className="text-white/80 text-sm">Full Stack Developer</p>
+      </div>
+      <div className="absolute bottom-6 left-6 [backface-visibility:hidden]">
+        <a href="https://www.linkedin.com/in/johan-melin/" target="_blank" className="text-white/80 hover:underline">
+          <p className="text-white/80 text-sm">Linkedin</p>
+        </a>
+        <a href="https://github.com/Johan-Melin" target="_blank" className="text-white/80 hover:underline">
+          <p className="text-white/80 text-sm">Github</p>
+        </a>
       </div>
 
       {/* Back face */}
@@ -43,7 +53,7 @@ const Card: React.FC<CardProps> = ({ theme }) => {
 
       <button
         onClick={flipCard}
-        className="absolute bottom-2 right-2 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/20 cursor-pointer"
+        className={`absolute bottom-2 right-2 ${transparentWrap} cursor-pointer`}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
