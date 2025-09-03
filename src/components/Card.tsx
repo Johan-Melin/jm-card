@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import type { Theme } from "@/lib/themes"
+import GlassPanel from "@/components/GlassPanel"
 
 type CardProps = {
   theme: Theme
@@ -11,8 +12,6 @@ const Card: React.FC<CardProps> = ({ theme }) => {
   const flipCard = () => {
     setIsFlipped(!isFlipped)
   }
-
-  const transparentWrap = "bg-white/10 backdrop-blur-sm rounded-full p-2 border border-white/20"
 
   return (
     <div className="relative w-96 h-64"
@@ -51,19 +50,21 @@ const Card: React.FC<CardProps> = ({ theme }) => {
         <p className="text-white/80 text-sm mb-1">Node.js | REST APIs | PHP | SQL</p>
       </div>
 
-      <button
-        onClick={flipCard}
-        className={`absolute bottom-2 right-2 ${transparentWrap} cursor-pointer`}
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-          />
-        </svg>
-      </button>
+        <div className="absolute bottom-2 right-2">
+          <GlassPanel 
+            variant="button"
+            onClick={flipCard}
+          >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            />
+          </svg>
+        </GlassPanel>
+      </div>
     </div>
   )
 }
