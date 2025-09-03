@@ -18,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`min-h-screen ${theme.background} flex items-center justify-center`}>
+    <div className={`min-h-screen ${theme.background} flex items-center justify-center p-4`}>
       
       <div className="absolute top-8 flex items-center gap-4">
         <GlassPanel 
